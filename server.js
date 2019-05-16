@@ -55,7 +55,12 @@ app.get("/form", function (req, res) {
   res.sendFile(path.join(__dirname, "form.html"));
 });
 
+app.get("/api/tables", function(req, res) {
+  return res.json(reservations);
+});
+
 app.post("/api/reservation", function (req, res) {
+  console.log(req.body);
   var newRes = req.body;
   newRes.routeName = newRes.name.replace(/\s+/g, "").toLowerCase();
   console.log(newRes);
