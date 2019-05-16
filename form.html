@@ -19,37 +19,50 @@
             <h1>Hot Restaurant</h1>
             <h3>Book the seat before they are all gone!</h3>
             <hr>
-            <a href="view"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
+            <a href="view"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View
+                    Tables</button></a>
 
         </div>
         <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Table Reservation</label>
                 <label for="exampleInputEmail1">Name</label>
-                <input type="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter name">
+                <input type="Name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
                 <small id="emailHelp" class="form-text text-muted"></small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Phone</label>
-                <input type="phone" class="form-control" id="exampleInputPassword1" placeholder="Phone">
+                <input type="phone" class="form-control" id="phone" placeholder="Phone">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Email</label>
-                <input type="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="Email" class="form-control" id="email" aria-describedby="emailHelp"
                     placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                     else.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Unique ID</label>
-                <input type="id" class="form-control" id="exampleInputPassword1" placeholder="Unique-ID">
+                <input type="id" class="form-control" id="uniqueId" placeholder="Unique-ID">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" id="makeRes">Submit</button>
         </form>
     </div>
-    
+
+    <script type="text/javascript">
+        $("makeRes").on("click", function (event) {
+            event.preventDefault();
+            var newCharacter = {
+                name: $("#name").val().trim(),
+                role: $("#phone").val().trim(),
+                age: $("#email").val().trim(),
+                id: $("uniqueId").val().trim(),
+            };
+        });
+    </script>
+
+
 </body>
 
 </html>
