@@ -53,7 +53,7 @@
         // Question: What does this code do?
         $("#add-btn").on("click", function (event) {
             event.preventDefault();
-            var reservations = {
+            var newReservation = {
                 tableName: $("#tableName").val().trim(),
                 phone: $("#phone").val().trim(),
                 email: $("#email").val().trim(),
@@ -61,7 +61,7 @@
             };
 
             // Question: What does this code do??
-            $.post("/api/characters", newCharacter)
+            $.post("/api/reservation", newReservation)
                 .then(function (data) {
                     console.log("add.html", data);
                     alert("Adding character...");
