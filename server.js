@@ -15,13 +15,40 @@ app.use(express.json());
 //  (DATA)
 // =============================================================
 
+var reservations = [
+  {
+    name: "Yoda",
+    phone: "777",
+    email: "Jedi-Master@jedi.com",
+    id: 9,
+  },
+  {
+    name: "Mace Windu",
+    phone: "555-Holla",
+    email: "Jedi-Mastah@jedi.com",
+    id: 1,
+  },
+  {
+    name: "Obi-Wan",
+    phone: "867-5309",
+    email: "irony@jedi.com",
+    id: 00,
+  },
+  {
+    name: "General Grevious",
+    phone: "444-4444",
+    email: "Jedi-killer@jedi.com",
+    id: 4,
+  },
 
-// Routes
-// =============================================================
+  // 
+
+  // Routes
+  // =============================================================
 
 
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
-});
+  // Starts the server to begin listening
+  // =============================================================
+  app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
+  });
