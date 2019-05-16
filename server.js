@@ -15,13 +15,56 @@ app.use(express.json());
 //  (DATA)
 // =============================================================
 
+var reservations = [
+  {
+    name: "Yoda",
+    phone: "777",
+    email: "Jedi-Master@jedi.com",
+    id: 9,
+  },
+  {
+    name: "Mace Windu",
+    phone: "555-Holla",
+    email: "Jedi-Mastah@jedi.com",
+    id: 1,
+  },
+  {
+    name: "Obi-Wan",
+    phone: "867-5309",
+    email: "irony@jedi.com",
+    id: 00,
+  },
+  {
+    name: "General Grevious",
+    phone: "444-4444",
+    email: "Jedi-killer@jedi.com",
+    id: 4,
+  },
 
-// Routes
-// =============================================================
+  // 
 
-
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
 });
+
+app.get("/tables", function(req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+app.get("/form", function(req, res) {
+  res.sendFile(path.join(__dirname, "form.html"));
+});
+
+app.post("/api/reservation", function(req, res) {
+  var newRes = req.body;
+  console.log(newRes);
+  reservations.push(newRes);
+});
+
+
+
+  // Starts the server to begin listening
+  // =============================================================
+  app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
+  });
