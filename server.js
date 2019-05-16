@@ -43,8 +43,18 @@ var reservations = [
 
   // 
 
-  // Routes
-  // =============================================================
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/tables", function(req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+app.get("/form", function(req, res) {
+  res.sendFile(path.join(__dirname, "form.html"));
+});
+
 
 
   // Starts the server to begin listening
