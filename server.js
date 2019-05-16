@@ -55,6 +55,12 @@ app.get("/form", function(req, res) {
   res.sendFile(path.join(__dirname, "form.html"));
 });
 
+app.post("/api/reservation", function(req, res) {
+  var newRes = req.body;
+  console.log(newRes);
+  reservations.push(newRes);
+});
+
 
 
   // Starts the server to begin listening
