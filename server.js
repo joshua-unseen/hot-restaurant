@@ -39,32 +39,34 @@ var reservations = [
     phone: "444-4444",
     email: "Jedi-killer@jedi.com",
     id: 4,
-  },
+  }];
 
-  // 
+// 
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.get("/tables", function(req, res) {
+app.get("/tables", function (req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-app.get("/form", function(req, res) {
+app.get("/form", function (req, res) {
   res.sendFile(path.join(__dirname, "form.html"));
 });
 
-app.post("/api/reservation", function(req, res) {
+app.post("/api/reservation", function (req, res) {
   var newRes = req.body;
+  newRes.routeName = newRes.name.replace(/\s+/g, "").toLowerCase();
   console.log(newRes);
   reservations.push(newRes);
+  res.json(newRes);
 });
 
 
 
-  // Starts the server to begin listening
-  // =============================================================
-  app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
-  });
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function () {
+  console.log("App listening on PORT " + PORT);
+});
