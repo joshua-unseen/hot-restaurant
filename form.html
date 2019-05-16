@@ -25,8 +25,9 @@
         </div>
         <form>
             <div class="form-group">
-                <label>Table Reservation Name</label>
-                <input class="form-control" id="tableName" aria-describedby="emailHelp" placeholder="Enter name">
+                <label for="exampleInputEmail1">Table Reservation</label>
+                <label for="exampleInputEmail1">Name</label>
+                <input type="Name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
                 <small id="emailHelp" class="form-text text-muted"></small>
             </div>
             <div class="form-group">
@@ -45,13 +46,12 @@
                 <input type="id" class="form-control" id="id" placeholder="Unique-ID">
             </div>
 
-            <button type="submit" class="btn btn-primary" id='add-btn'>Submit</button>
+            <button type="submit" class="btn btn-primary" id="makeRes">Submit</button>
         </form>
     </div>
 
     <script type="text/javascript">
-        // Question: What does this code do?
-        $("#add-btn").on("click", function (event) {
+        $("makeRes").on("click", function (event) {
             event.preventDefault();
             var newReservation = {
                 tableName: $("#tableName").val().trim(),
@@ -68,6 +68,7 @@
                 });
         });
     </script>
+
 
 </body>
 
